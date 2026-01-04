@@ -1,0 +1,50 @@
+/* Make main fill the available space so footer sticks to bottom */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main.text-page {
+  flex: 1; /* fill remaining vertical space */
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+main.text-page h1 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+main.text-page h2 {
+  font-size: 22px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+main.text-page p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: var(--palette-tips);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Ensure footer stays at bottom even if content is short */
+body {
+  justify-content: space-between;
+}
