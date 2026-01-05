@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!list || !prev || !next) return;
 
-  const gap = 18; // match your CSS gap
+  const gap = 20; // match your CSS gap
   const imgWidth = list.querySelector("img").offsetWidth + gap;
 
   prev.addEventListener("click", () => {
