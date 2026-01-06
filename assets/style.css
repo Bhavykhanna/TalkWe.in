@@ -6,7 +6,6 @@
   --palette-tips: #00A9FB; /* accent color */
 }
 
-
 body{
   display: flex;
   flex-direction: column;
@@ -17,35 +16,36 @@ main.text-page {
   flex: 1; /* fill remaining vertical space */
   margin: auto;
   padding: 40px 20px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #cbd5e1;
   border-radius: 8px;
 }
 
 /* Headings */
 main.text-page h1 {
-  font-size: 32px;
+  font-size: clamp(24px, 5vw, 32px); /* big for main titles */
   margin-bottom: 24px;
   color: #ffffff;
 }
 
 main.text-page h2 {
-  font-size: 22px;
+  font-size: clamp(20px, 4vw, 26px); /* slightly smaller */
   margin-top: 24px;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 main.text-page h3 {
-  font-size: 18px;
+  font-size: clamp(16px, 3vw, 20px); /* smaller subtitle */
   margin-top: 20px;
   margin-bottom: 8px;
   color: var(--palette-tips); /* highlight section subtitles */
 }
 
-/* Paragraphs */
-main.text-page p {
-  font-size: 16px;
+/* Paragraphs and list text */
+main.text-page p,
+main.text-page li {
+  font-size: clamp(11px, 1.5vw, 16px); /* normal text 12-18px */
   margin-bottom: 16px;
 }
 
