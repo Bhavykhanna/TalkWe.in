@@ -1,19 +1,28 @@
-/* Make main fill the available space so footer sticks to bottom */
-html, body {
-  height: 100%;
+/* ================= ROOT ================= */
+:root {
+  --palette-main: #1E1F22;
+  --palette-main-b: #282B30;
+  --palette-sub: #313338;
+  --palette-tips: #00A9FB; /* accent color */
+}
+
+
+body{
   display: flex;
   flex-direction: column;
 }
 
+/* Make main fill the available space so footer sticks to bottom */
 main.text-page {
   flex: 1; /* fill remaining vertical space */
-  max-width: 900px;
   margin: auto;
   padding: 40px 20px;
   line-height: 1.7;
   color: #cbd5e1;
+  border-radius: 8px;
 }
 
+/* Headings */
 main.text-page h1 {
   font-size: 32px;
   margin-bottom: 24px;
@@ -27,11 +36,43 @@ main.text-page h2 {
   color: #ffffff;
 }
 
+main.text-page h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: var(--palette-tips); /* highlight section subtitles */
+}
+
+/* Paragraphs */
 main.text-page p {
   font-size: 16px;
   margin-bottom: 16px;
 }
 
+/* Lists */
+main.text-page ul {
+  list-style: disc inside;
+  margin-bottom: 16px;
+}
+
+main.text-page li {
+  margin-bottom: 8px;
+}
+
+/* Bold text highlight */
+main.text-page strong {
+  color: var(--palette-tips);
+  font-weight: 600;
+}
+
+/* Important notices */
+main.text-page em {
+  color: var(--palette-tips);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Links */
 .back-link {
   display: inline-block;
   margin-top: 30px;

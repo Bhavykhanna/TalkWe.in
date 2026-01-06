@@ -62,7 +62,6 @@ header div img {
   padding: 0 30px;
   display: flex;
   justify-content: space-between;
-
   gap: 15px;
 }
 
@@ -93,7 +92,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  cursor: pointer;
 }
 
 .subtitle {
@@ -260,6 +260,10 @@ a:hover {
   .play-btn {
     margin-top: 25px;
   }
+
+  .hero{
+  flex-direction: row;
+}
 }
 
 /* Tablet */
