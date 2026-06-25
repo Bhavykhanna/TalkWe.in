@@ -41,6 +41,66 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .text-page a:hover { color: var(--teal); }
 .text-page hr { border: 0; border-top: 1px solid var(--line); margin: 38px 0; max-width: 720px; }
 
+/* ================= LEGAL / TERMS — made to actually be read ================= */
+.text-page.legal { font-size: 16.5px; line-height: 1.8; }
+/* main sections: prominent white heading with a gradient accent bar */
+.text-page.legal h3 {
+  color: #fff; font-size: 20px; font-weight: 800; letter-spacing: -0.015em;
+  margin: 40px 0 14px; padding-left: 15px; position: relative;
+  scroll-margin-top: 84px;
+}
+.text-page.legal h3::before {
+  content: ""; position: absolute; left: 0; top: 4px; bottom: 4px; width: 4px;
+  border-radius: 4px; background: linear-gradient(180deg, var(--teal), var(--blue));
+}
+/* sub-headings step down to the blue accent */
+.text-page.legal h4 { color: var(--blue); font-size: 15px; font-weight: 700; margin: 24px 0 8px; }
+/* softer, fading section dividers instead of hard full-width rules */
+.text-page.legal hr {
+  border: 0; height: 1px; margin: 46px 0; max-width: 720px;
+  background: linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent);
+}
+.text-page.legal ul { gap: 10px; }
+.text-page.legal li { padding-left: 26px; }
+
+/* "On this page" table of contents */
+.toc {
+  margin: 0 0 10px; padding: 20px 24px; border-radius: 18px;
+  background: var(--surface); border: 1px solid var(--line); backdrop-filter: blur(8px);
+}
+.toc-title {
+  font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, var(--teal), var(--blue));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.toc-note { color: #e7eaff; font-size: 14.5px; font-weight: 600; line-height: 1.55; margin: 0 0 16px; max-width: 560px; }
+.toc-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 9px 28px;
+}
+.toc .toc-list li { padding: 0; margin: 0; position: static; }
+.toc .toc-list li::before { content: none; }
+.toc-list a { color: var(--muted); font-size: 14.5px; font-weight: 600; transition: color .18s; }
+.toc-list a:hover { color: #fff; }
+@media (max-width: 560px) { .toc-list { grid-template-columns: 1fr; } }
+
+/* back-to-top button (long pages) — hidden until scrolled, tucked in the corner */
+.to-top {
+  position: fixed; right: 22px; bottom: 22px; z-index: 60;
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: linear-gradient(135deg, var(--indigo), var(--blue)); color: #fff;
+  font-size: 20px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 26px -8px rgba(108,92,255,0.7);
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: opacity .22s, transform .22s, visibility .22s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top.show:hover { transform: translateY(-2px); }
+@media (max-width: 560px) { .to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; } }
+
 /* callout note */
 .note {
   margin: 22px 0; padding: 18px 22px; border-radius: 16px;

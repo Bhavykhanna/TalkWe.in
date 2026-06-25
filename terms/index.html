@@ -55,7 +55,7 @@
       <p class="updated">Last Updated <strong>January 2026</strong> · Version 2</p>
     </header>
 
-    <div class="text-page">
+    <div class="text-page legal">
 
       <h2>📄 Privacy Policy — TalkWe</h2>
       <p>
@@ -78,6 +78,8 @@
       </p>
 
       <hr />
+
+      <nav class="toc" data-toc hidden aria-label="On this page"></nav>
 
       <h3>1. Purpose</h3>
       <p>
@@ -162,8 +164,8 @@
         <li>One-on-one messages</li>
         <li>Group messages</li>
         <li>Shared chat images</li>
-        <li>Room encryption keys</li>
-        <li>User encryption keys</li>
+        <li>Session and group encryption keys</li>
+        <li>Your identity keys</li>
       </ul>
       <p>Only chat participants can decrypt this data.</p>
 
@@ -181,34 +183,48 @@
 
       <h3>5. Encryption and Message Security</h3>
       <p>
-        TalkWe uses a multi-layered end-to-end encryption (E2EE) system so that only intended recipients can read
-        messages.
+        TalkWe uses end-to-end encryption (E2EE) built on the open <strong>Signal Protocol</strong> — the same
+        protocol family used by Signal and WhatsApp — so that only intended recipients can read messages.
         TalkWe does not have access to readable messages, media, encryption keys, or backups.
       </p>
 
       <h4>User Encryption Keys</h4>
       <ul>
-        <li>Each user has a public key and a private key.</li>
+        <li>Each device holds a long-term identity key pair (a public key and a private key), generated on the device.</li>
         <li>Private keys are securely stored in the Android Keystore.</li>
         <li>Private keys never leave the device, TalkWe cannot access or export them.</li>
+        <li>Each user also publishes short-lived public “pre-keys” that let others start an encrypted session — these contain no private information.</li>
       </ul>
 
-      <h4>Backup PassKey (Private Key Recovery)</h4>
+      <h4>Backup PassKey (Account &amp; Identity Recovery)</h4>
       <ul>
-        <li>Users may optionally create a Backup PassKey to assist with private key recovery when switching devices.</li>
+        <li>Users may optionally create a Backup PassKey — a zero-knowledge recovery code held only by the user — to assist with recovering their identity when switching devices.</li>
+        <li>The PassKey is not stored by TalkWe in readable form and is not tied to your login, so we cannot use it to access your account or data.</li>
         <li>The PassKey exists only for recovery purposes and does not bypass encryption or security rules.</li>
         <li>The PassKey may be retained while the account remains active and can be replaced with a new PassKey by the
           user.</li>
-        <li>The PassKey cannot restore chats by itself — it only unlocks the user’s private key.</li>
+        <li>The PassKey cannot restore chats by itself — it unlocks your identity so an encrypted backup can be restored.</li>
         <li>Users are responsible for safeguarding their PassKey.</li>
         <li>TalkWe cannot access the PassKey, and it cannot be used to log into the account directly.</li>
       </ul>
 
-      <h4>Chat Room &amp; Message Encryption</h4>
+      <h4>1-on-1 Chats</h4>
       <ul>
-        <li>Each chat room has a unique secret room key, encrypted per participant.</li>
-        <li>Every message uses a unique message key, encrypted using the room key.</li>
-        <li>Messages are digitally signed and encrypted before transmission.</li>
+        <li>Sessions are established using X3DH key agreement with added post-quantum protection (PQXDH, using CRYSTALS-Kyber / Kyber-1024) to guard against future quantum attacks.</li>
+        <li>Messages are then protected by the Double Ratchet, which provides forward secrecy — every message uses a fresh key, so past messages stay safe even if a later key is exposed.</li>
+        <li>Messages are encrypted and authenticated on the device before transmission.</li>
+      </ul>
+
+      <h4>Group Chats</h4>
+      <ul>
+        <li>Group messages are end-to-end encrypted using Sender Keys — each member encrypts once for the group, and only group members can decrypt.</li>
+        <li>When a member leaves, the group re-keys so the removed member can no longer read new messages.</li>
+      </ul>
+
+      <h4>Media Encryption</h4>
+      <ul>
+        <li>Each shared image or file is encrypted with its own random key, delivered only through the encrypted channel.</li>
+        <li>Only people in the chat can open shared media.</li>
       </ul>
 
       <h3>Server Role</h3>
@@ -222,12 +238,9 @@
 
       <h3>Backup Encryption</h3>
       <ul>
-        <li>Local backups contain already encrypted chats</li>
-        <li>Backups are additionally encrypted using:
-          <div>1. A strong AES encryption key</div>
-          <div>2. The AES key is encrypted using the user’s private key</div>
-        </li>
-        <li>Backup files remain unreadable without proper keys</li>
+        <li>Backups contain your already-encrypted chats</li>
+        <li>Backups are additionally encrypted with a strong key sealed to your own identity, so they can only be restored by you</li>
+        <li>Backup files remain unreadable without your keys</li>
       </ul>
       <p>Even if accessed externally, backups cannot be read.</p>
 
@@ -254,7 +267,7 @@
 
       <h3>6. Local Chat Storage</h3>
       <ul>
-        <li>Chats are stored locally on the user’s device.</li>
+        <li>Once delivered, a message is decrypted a single time and stored in an encrypted local database on your device (SQLCipher, 256-bit), with the database key protected by the Android Keystore.</li>
         <li>Servers are used only to relay encrypted messages.</li>
       </ul>
 
@@ -437,7 +450,7 @@
 
       <h3>16. Contact</h3>
       <p>
-        📧 support@talkwe.in<br />
+        📧 <a href="mailto:support@talkwe.in">support@talkwe.in</a><br />
         📱 In-app support (when available)
       </p>
 
@@ -477,6 +490,7 @@
     </div>
   </footer>
 
+  <script src="/assets/toc.js"></script>
   <script src="/assets/nav.js"></script>
 </body>
 
