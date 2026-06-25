@@ -7,103 +7,331 @@
   <title>TalkWe – Secure Messaging</title>
 
   <meta name="description"
-    content="TalkWe is a secure chat app where you can sign in with just your email. We do not collect personal info, location data, or device storage. Images and documents are shared only when you choose them. Your data is never sold or used for AI training.">
+    content="TalkWe is a secure chat app where you can sign in with just your email. We do not collect personal info, location data, or device storage. Images and documents are shared only when you choose them. Your data is never sold or used for AI training." />
   <meta name="keywords"
-    content="TalkWe, secure chat, private messaging, email login, data privacy, non-targeted ads, encrypted chat">
-  <meta name="author" content="Bhavy Khanna">
+    content="TalkWe, secure chat, private messaging, email login, data privacy, non-targeted ads, encrypted chat" />
+  <meta name="author" content="Bhavy Khanna" />
 
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
- <link rel="icon" href="/favicon.svg" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="assets/home.css" />
+  <link rel="stylesheet" href="/assets/home-bright.css" />
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a class="nav-brand" href="#top" aria-label="TalkWe home">
+      <img class="logo-mark" src="/assets/icon-white.png" alt="" aria-hidden="true" />
+      <span class="nav-name">TalkWe</span>
+    </a>
 
-  <header>
-    <div>
-      <img src="assets/Group 7.svg" alt="TalkWe app preview" />
-      <h1 class="app-name">TalkWe</h1>
-    </div>
-    <strong class="highlight">Secure. Private. Simple communication.</strong>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="/terms">Terms</a>
+      <a href="/whatsnew">What's New</a>
+      <span class="pill-soon">Coming Soon</span>
+    </nav>
   </header>
 
+  <!-- ============ HERO ============ -->
   <section class="hero">
-    <div>
+    <div class="hero-glow" aria-hidden="true"></div>
 
-      <p class="subtitle">
+    <div class="hero-copy">
+      <span class="hero-badge">
+        <span class="dot"></span> Built on the open Signal Protocol
+      </span>
 
-        Sign in with <span class="em">just an email</span>.
-        <span class="em">No additional personal information</span> is collected.<br><br>
+      <h1 class="hero-title">
+        <span class="brandhint">Talk</span> freely.<br />
+        <span class="brandhint">We</span> can't listen, and neither can anyone&nbsp;else.
+      </h1>
 
-        We <span class="em">do not collect location data</span> and
-        <span class="em">do not access device storage broadly</span>.<br>
-        Images and documents are shared <span class="em">only when you choose them</span>,
-        using the system file picker — we receive <span class="em">only a copy of the selected file</span>.<br><br>
-
-        Your data is <span class="em">never sold</span> and
-        <span class="em">never used for AI training</span>.<br><br>
-
-        To support the service, we may display
-        <span class="em">non-targeted ads</span> via Google AdMob in future —
-        <span class="em">no personalization</span>.
+      <p class="hero-sub">
+        <span class="brand">TalkWe</span> is a private chat app where every message is locked end-to-end —
+        only you and the person you're talking to can ever read it.
+        <span class="muted">Not us. Not anyone.</span>
       </p>
 
-      <!-- href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE" -->
+      <p class="hero-credibility">
+        The same gold-standard encryption that powers Signal and WhatsApp,
+        <span class="nowrap">+ post-quantum protection</span> for tomorrow's threats.
+      </p>
 
-      <a class="play-btn" target="_blank">
-        Get it Soon on Google Play
-      </a>
-
-    </div>
-
-    <img class="to_hide" src="assets/ss chat.jpg" alt="TalkWe app preview" />
-
-  </section>
-
-  <section class="screenshots container">
-    <h2>Inside TalkWe</h2>
-
-    <div class="ss-wrapper" style="position: relative;">
-      <button class="ss-prev">&#10094;</button>
-      <div class="ss-list">
-        <img src="assets/ss login.jpg" alt="Login screen" />
-        <img src="assets/sshome.jpg" alt="Home screen" />
-        <img class="to_show" src="assets/ss chat.jpg" alt="chat screen" />
-        <img src="assets/ss friends.jpg" alt="Friends screen" />
-        <img src="assets/ss theme.jpg" alt="Theme screen" />
-        <img src="assets/ss profile.jpg" alt="Profile screen" />
-        <img src="assets/ss noti.jpg" alt="Notification screen" />
-        <img src="assets/ss add.jpg" alt="Add screen" />
+      <div class="hero-cta">
+        <span class="play-badge" role="img" aria-label="Coming soon on Google Play">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.6 2.3 14 12 3.6 21.7c-.4.2-.9-.1-.9-.6V2.9c0-.5.5-.8.9-.6Z" fill="#00d2ff" />
+            <path d="M3.6 2.3 14 12l3.1-2.9L4.5 1.8c-.3-.2-.7-.1-.9.5Z" fill="#00f076" />
+            <path d="M3.6 21.7 14 12l3.1 2.9L4.5 22.2c-.3.2-.7.1-.9-.5Z" fill="#ff3a44" />
+            <path d="M14 12l3.1-2.9 3.6 2.1c.6.3.6 1.2 0 1.6l-3.6 2.1L14 12Z" fill="#ffc500" />
+          </svg>
+          <span class="play-text">
+            <small>Coming soon on</small>
+            <strong>Google Play</strong>
+          </span>
+        </span>
+        <a class="ghost-link" href="#features">See what's inside ↓</a>
       </div>
-      <button class="ss-next">&#10095;</button>
+
+      <p class="hero-status">
+        Core experience built &amp; working — private &amp; group chats, media, notifications,
+        encrypted backups. Now polishing for a <strong>closed beta</strong>.
+      </p>
+    </div>
+
+    <div class="hero-phone">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <img src="/assets/ss-chat.jpg" alt="A TalkWe chat conversation" loading="eager" />
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust">
+    <div class="trust-item"><strong>End-to-end</strong><span>by default</span></div>
+    <div class="trust-item"><strong>Invite-only</strong><span>for now</span></div>
+    <div class="trust-item"><strong>Email-only</strong><span>sign-in</span></div>
+    <div class="trust-item"><strong>Post-quantum</strong><span>ready</span></div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section" id="features">
+    <div class="section-head">
+      <span class="eyebrow">What you get</span>
+      <h2>Private by design — not as a setting.</h2>
+      <p>Everything is encrypted on your phone before it leaves. Our servers only ever
+        see scrambled text. No configuration, nothing to switch on.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="card">
+        <span class="card-ico">🔒</span>
+        <h3>Truly private 1-on-1 chats</h3>
+        <p>End-to-end encrypted — can't be read in transit, off our servers, or handed over. We never hold the keys.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">👥</span>
+        <h3>Secure group chats</h3>
+        <p>Same E2E protection for groups. Leave one and you instantly can't read anything new.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">🖼️</span>
+        <h3>Encrypted photos &amp; media</h3>
+        <p>Every file is locked end-to-end, start to finish. Only people in the chat can open it.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">🛡️</span>
+        <h3>Post-quantum ready</h3>
+        <p>Kyber-1024 key protection guards your conversations against tomorrow's quantum computers.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">🔑</span>
+        <h3>Effortless security</h3>
+        <p>No key setup, nothing to configure. The encryption just works, quietly, in the background.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">📲</span>
+        <h3>Reliable delivery</h3>
+        <p>Always delivered, then wiped from our servers on arrival. Anything undelivered is held just 5 days — log in by then, or it's gone for good.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">♻️</span>
+        <h3>Safe, encrypted backups</h3>
+        <p>Sealed to your identity, so you keep your chats across a phone switch or reset.</p>
+      </article>
+      <article class="card">
+        <span class="card-ico">📧</span>
+        <h3>Email-only sign-in</h3>
+        <p>No phone number, no extra personal info. We collect as little about you as possible.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ DIFFERENCE ============ -->
+  <section class="section diff" id="difference">
+    <div class="section-head">
+      <span class="eyebrow">What makes us different</span>
+      <h2>Most "free" chat apps make money from what you say.</h2>
+      <p><span class="brand">TalkWe</span> is the opposite.</p>
+    </div>
+
+    <div class="diff-grid">
+      <div class="diff-row">
+        <div class="diff-them">
+          <span class="tag">Other apps</span>
+          <p>"Private" — but they hold the keys.</p>
+        </div>
+        <div class="diff-us">
+          <span class="tag us">TalkWe</span>
+          <p>We <em>literally cannot</em> read your messages.</p>
+        </div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-them">
+          <span class="tag">Other apps</span>
+          <p>Security is a buried setting.</p>
+        </div>
+        <div class="diff-us">
+          <span class="tag us">TalkWe</span>
+          <p>Always on, for everyone, by default.</p>
+        </div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-them">
+          <span class="tag">Other apps</span>
+          <p>Your data is the product.</p>
+        </div>
+        <div class="diff-us">
+          <span class="tag us">TalkWe</span>
+          <p>Your conversations are nobody's business but yours.</p>
+        </div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-them">
+          <span class="tag">Other apps</span>
+          <p>Keep your messages on their servers — sometimes forever.</p>
+        </div>
+        <div class="diff-us">
+          <span class="tag us">TalkWe</span>
+          <p>Wiped the second they're delivered — and nothing waits on our servers past 5 days.</p>
+          <a class="diff-link" href="/terms">How retention works &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="diff-note">
+      <strong>On staying free:</strong> No ads today. Later we'll show a few light, non-intrusive
+      ads on your home screen — tucked between chat cards, never inside an open conversation — to
+      help cover costs. And never targeted from your messages, because we genuinely can't read them.
+    </p>
+  </section>
+
+  <!-- ============ FUN ROW ============ -->
+  <section class="section fun" id="fun">
+    <div class="fun-inner">
+      <div class="fun-copy">
+        <span class="eyebrow">More than secure</span>
+        <h2>Express yourself — themes, GIFs, stickers &amp; memes.</h2>
+        <p>Privacy doesn't have to be boring. Drop a GIF, slap on a sticker, or repaint
+          your whole chat with built-in themes and accent colors.</p>
+        <ul class="fun-list">
+          <li><strong>GIFs, stickers &amp; memes</strong> — an in-app picker with trending, search and categories.</li>
+          <li><strong>Chat themes</strong> — 20 built-in backgrounds and message-color palettes.</li>
+          <li><strong>Add friends by code</strong> — share a simple friend code, no numbers needed.</li>
+          <li><strong>Report &amp; block</strong> — keep bad actors out of your conversations.</li>
+        </ul>
+      </div>
+      <div class="fun-shots">
+        <div class="mini-phone"><img src="/assets/ss-theme.jpg" alt="Chat themes" loading="lazy" /></div>
+        <div class="mini-phone offset"><img src="/assets/ss-friends.jpg" alt="Friends list" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section how" id="how">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Up and chatting in three steps.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>Sign in with email</h3>
+        <p>No phone number, no forms. Just an email and you're in.</p>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>Add your friends</h3>
+        <p>Share your friend code, or add theirs. Start a group in seconds.</p>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>Chat securely</h3>
+        <p>Every message, photo and file is end-to-end encrypted automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOTS ============ -->
+  <section class="section screenshots" id="screens">
+    <div class="section-head">
+      <span class="eyebrow">A look inside</span>
+      <h2>Inside <span class="brand">TalkWe</span></h2>
+    </div>
+
+    <div class="ss-wrapper">
+      <button class="ss-prev" aria-label="Previous">&#10094;</button>
+      <div class="ss-list">
+        <img src="/assets/ss-login.jpg" alt="Login screen" loading="lazy" />
+        <img src="/assets/ss-home.jpg" alt="Home screen" loading="lazy" />
+        <img class="to_show" src="/assets/ss-chat.jpg" alt="Chat screen" loading="lazy" />
+        <img src="/assets/ss-friends.jpg" alt="Friends screen" loading="lazy" />
+        <img src="/assets/ss-theme.jpg" alt="Theme screen" loading="lazy" />
+        <img src="/assets/ss-profile.jpg" alt="Profile screen" loading="lazy" />
+        <img src="/assets/ss-noti.jpg" alt="Notifications screen" loading="lazy" />
+        <img src="/assets/ss-add.jpg" alt="Add friend screen" loading="lazy" />
+      </div>
+      <button class="ss-next" aria-label="Next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <h2><span class="brandhint">Talk</span> freely.<br /><span class="brandhint">We</span> can't listen, and neither can anyone&nbsp;else.</h2>
+    <span class="play-badge big" role="img" aria-label="Coming soon on Google Play">
+      <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.6 2.3 14 12 3.6 21.7c-.4.2-.9-.1-.9-.6V2.9c0-.5.5-.8.9-.6Z" fill="#00d2ff" />
+        <path d="M3.6 2.3 14 12l3.1-2.9L4.5 1.8c-.3-.2-.7-.1-.9.5Z" fill="#00f076" />
+        <path d="M3.6 21.7 14 12l3.1 2.9L4.5 22.2c-.3.2-.7.1-.9-.5Z" fill="#ff3a44" />
+        <path d="M14 12l3.1-2.9 3.6 2.1c.6.3.6 1.2 0 1.6l-3.6 2.1L14 12Z" fill="#ffc500" />
+      </svg>
+      <span class="play-text">
+        <small>Coming soon on</small>
+        <strong>Google Play</strong>
+      </span>
+    </span>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="footer-content">
-
       <div class="footer-left">
-        <h4>TalkWe</h4>
-        <p>Secure private messaging</p>
+        <div class="footer-brand">
+          <img class="logo-mark sm" src="/assets/icon-white.png" alt="" aria-hidden="true" />
+          <h4><span class="brand">TalkWe</span></h4>
+        </div>
+        <p>Secure, private messaging.</p>
         <a href="mailto:support@talkwe.in">support@talkwe.in</a>
       </div>
 
       <div class="footer-right">
-        <a href="/terms">Terms & Conditions</a>
-        <a href="/whatsnew">What’s New</a>
+        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="/whatsnew">What's New</a>
+        <a href="/Deletion">Data deletion</a>
       </div>
-
     </div>
   </footer>
 
-  <!-- JS: Put this at the end of body -->
-  <script src="assets/ss-carousel.js"></script>
-
+  <script src="/assets/ss-carousel.js"></script>
+  <script src="/assets/nav.js"></script>
+  <script src="/assets/reveal.js"></script>
 </body>
 
 </html>

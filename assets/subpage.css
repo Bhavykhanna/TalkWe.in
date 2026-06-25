@@ -1,0 +1,76 @@
+/* ================= SUBPAGE (text pages) — bright theme ================= */
+/* Relies on home-bright.css for tokens, nav, footer and the background mesh. */
+
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+.subpage { flex: 1 0 auto; width: 100%; max-width: 840px; margin: 0 auto; padding: 64px 24px 96px; }
+
+/* ---- page header ---- */
+.page-header { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+.page-header h1 {
+  font-size: clamp(32px, 5.2vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.06;
+}
+.page-header h1 em { font-style: normal; font-size: 0.5em; font-weight: 700; color: var(--muted-2); letter-spacing: 0; }
+.page-header .lede { margin-top: 18px; color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 660px; }
+.page-header .updated { margin-top: 16px; font-size: 13px; color: var(--muted-2); }
+.page-header .updated strong { color: var(--teal); font-weight: 700; }
+
+/* ---- prose ---- */
+.text-page { color: var(--muted); font-size: 16.5px; line-height: 1.78; }
+.text-page h2 { color: #fff; font-size: clamp(21px, 3vw, 27px); font-weight: 800; letter-spacing: -0.02em; margin: 46px 0 14px; }
+.text-page h3 { color: var(--blue); font-size: 18px; font-weight: 700; margin: 30px 0 10px; }
+.text-page h4 { color: #fff; font-size: 16px; font-weight: 700; margin: 22px 0 8px; letter-spacing: -0.01em; }
+.text-page p { margin-bottom: 16px; max-width: 720px; }
+.text-page ul { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 11px; max-width: 720px; }
+.text-page li { position: relative; padding-left: 24px; }
+.text-page li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(160deg, var(--teal), var(--blue)); }
+.text-page li > div { padding-left: 4px; color: var(--muted-2); }
+.text-page strong { color: #fff; font-weight: 700; }
+.text-page em { font-style: normal; color: var(--teal); font-weight: 600; }
+.text-page a { color: var(--blue); font-weight: 600; transition: color .18s; }
+.text-page a:hover { color: var(--teal); }
+.text-page hr { border: 0; border-top: 1px solid var(--line); margin: 38px 0; max-width: 720px; }
+
+/* callout note */
+.note {
+  margin: 22px 0; padding: 18px 22px; border-radius: 16px;
+  background: linear-gradient(135deg, rgba(108,92,255,0.16), rgba(25,227,192,0.10));
+  border: 1px solid rgba(255,255,255,0.14); color: #e7eaff; font-size: 15px; line-height: 1.6;
+  max-width: 720px;
+}
+.note strong { color: var(--teal); }
+
+.back-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 48px; color: var(--blue); font-weight: 700; }
+.back-link:hover { color: var(--teal); }
+
+/* ================= CHANGELOG (What's New) ================= */
+.changelog { display: flex; flex-direction: column; gap: 22px; margin-top: 6px; }
+.release {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: 26px 28px; backdrop-filter: blur(8px);
+  transition: border-color .2s, transform .2s;
+}
+.release:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
+.release-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
+.release-ver { font-size: 21px; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.release-pill { font-size: 12px; font-weight: 700; color: #fff; background: linear-gradient(90deg, var(--indigo), var(--blue)); padding: 4px 12px; border-radius: 999px; white-space: nowrap; box-shadow: 0 6px 16px -6px rgba(108,92,255,0.7); }
+.release-date { font-size: 13px; color: var(--muted-2); margin-left: auto; }
+.change-group { margin-top: 16px; }
+.change-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 9px; color: #fff; }
+.change-tag.new { background: linear-gradient(90deg, var(--teal), var(--blue)); }
+.change-tag.improved { background: linear-gradient(90deg, var(--blue), var(--indigo)); }
+.change-tag.fixed { background: linear-gradient(90deg, var(--violet), var(--pink)); }
+.change-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.change-list li { position: relative; padding-left: 22px; color: var(--muted); font-size: 15px; }
+.change-list li::before { content: ""; position: absolute; left: 5px; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(160deg, var(--teal), var(--blue)); }
+
+@media (max-width: 560px) {
+  .subpage { padding: 40px 18px 64px; }
+  .page-header { margin-bottom: 30px; padding-bottom: 22px; }
+  .text-page { font-size: 16px; }
+  .text-page h2 { margin-top: 34px; }
+  .release { padding: 22px 20px; }
+  .release-head { gap: 10px; }
+  .release-date { margin-left: 0; width: 100%; }
+  .note { padding: 16px 18px; }
+}
