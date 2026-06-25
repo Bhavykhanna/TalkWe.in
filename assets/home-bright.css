@@ -418,13 +418,18 @@ a { color: inherit; text-decoration: none; }
   .hero { padding: 44px 20px 0; gap: 32px; }
   .hero-badge { margin-bottom: 20px; }
   .trust { gap: 12px; }
-  .trust-item { padding: 18px 10px; }
+  .trust-item { padding: 18px 10px; min-width: 0; }
+  .trust-item strong { font-size: 18px; }
   .fun-shots { min-height: 320px; }
   .fun .fun-inner { gap: 24px; }
   .cta-band { gap: 28px; }
   .ss-prev, .ss-next { width: 40px; height: 40px; }
   .ss-prev { left: -4px; }
   .ss-next { right: -4px; }
+}
+/* trust strip → single centered column on small phones (avoids clipping/overflow) */
+@media (max-width: 480px) {
+  .trust { grid-template-columns: 1fr; }
 }
 @media (max-width: 380px) {
   .section { padding: var(--gap-y) 16px 0; }
