@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const note = document.createElement("p");
   note.className = "toc-note";
   note.textContent =
-    "We actually want you to read this — so we tried to make it easy. Nothing buried, nothing cheeky.";
+    "We actually want you to read this, so we tried to make it easy. Nothing buried, nothing cheeky.";
 
   const list = document.createElement("ol");
   list.className = "toc-list";
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mount.hidden = false;
 });
 
-// Back-to-top button — this page is long. Floats bottom-right and only appears
+// Back-to-top button for long pages. Floats bottom-right and only appears
 // after you've scrolled down, so it can't be tapped by accident near the top.
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.createElement("button");
